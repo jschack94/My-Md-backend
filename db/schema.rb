@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 2020_03_02_181258) do
     t.string "residency"
     t.string "email"
     t.string "image"
+ActiveRecord::Schema.define(version: 2020_03_02_175731) do
+
+  create_table "patients", force: :cascade do |t|
+    t.string "condition"
+    t.string "name"
+    t.integer "height"
+    t.integer "weight"
+    t.integer "age"
+    t.string "image"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
