@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_195424) do
+ActiveRecord::Schema.define(version: 2020_03_02_200712) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.date "date"
+    t.datetime "time"
+    t.string "diagnosis", default: "N/A"
+    t.string "directions", default: "N/A"
+    t.integer "doctor_id"
+    t.integer "patient_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "doctors", force: :cascade do |t|
     t.string "name"
