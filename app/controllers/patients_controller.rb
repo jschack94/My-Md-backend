@@ -1,4 +1,2 @@
 class PatientsController < ApplicationController
-  
- 
 end
