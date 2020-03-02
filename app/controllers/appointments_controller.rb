@@ -1,3 +1,3 @@
-class AppointmentsController < ApplicationController::API
-  
+class AppointmentsController < ApplicationController
+
 end
