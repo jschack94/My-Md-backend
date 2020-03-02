@@ -3,7 +3,5 @@ class AppointmentSerializer < ActiveModel::Serializer
     belongs_to :doctor
     belongs_to :patient
 
-    def  id
-      object.diagnosis
-    end
+
 end
