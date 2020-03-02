@@ -1,3 +1,3 @@
-class DoctorsController < ApplicationController::API
-  
+class DoctorsController < ApplicationController
+
 end
