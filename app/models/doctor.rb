@@ -1,7 +1,6 @@
 class Doctor < ApplicationRecord
-has_many :appointments
-has_many :patients, through: :appointments
-
+  has_many :appointments
+  has_many :patients, through: :appointments
 
 validates :name, presence: true
 validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
