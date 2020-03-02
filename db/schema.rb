@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_175731) do
+ActiveRecord::Schema.define(version: 2020_03_02_194355) do
 
   create_table "patients", force: :cascade do |t|
     t.string "condition"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_175731) do
     t.integer "height"
     t.integer "weight"
     t.integer "age"
-    t.string "image"
+    t.string "image", default: "https://252radio.com/wp-content/uploads/2016/11/default-user-image.png"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -1,2 +1,2 @@
-class PatientsController < ApplicationController
+class PatientsController < ActionController::API
 end
