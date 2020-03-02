@@ -10,6 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 2020_03_02_181258) do
+
+  create_table "doctors", force: :cascade do |t|
+    t.string "name"
+    t.string "specialty"
+    t.string "degree"
+    t.string "bio"
+    t.string "residency"
+    t.string "email"
+    t.string "image"
 ActiveRecord::Schema.define(version: 2020_03_02_175731) do
 
   create_table "patients", force: :cascade do |t|
