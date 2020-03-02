@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_203832) do
+ActiveRecord::Schema.define(version: 2020_03_02_210121) do
 
   create_table "appointments", force: :cascade do |t|
     t.date "date"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_203832) do
   end
 
   create_table "doctors", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
     t.string "specialty"
     t.string "degree"
     t.string "bio"
@@ -33,11 +33,12 @@ ActiveRecord::Schema.define(version: 2020_03_02_203832) do
     t.string "image", default: "https://252radio.com/wp-content/uploads/2016/11/default-user-image.png"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "last_name"
   end
 
   create_table "patients", force: :cascade do |t|
     t.string "health_conditions"
-    t.string "name"
+    t.string "first_name"
     t.integer "height"
     t.integer "weight"
     t.integer "age"
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_203832) do
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "last_name"
   end
 
 end
