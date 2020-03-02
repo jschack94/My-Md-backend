@@ -1,7 +1,2 @@
-class Doctor Serializer < ActiveModel::Serializer
-    attributes :id, :name, :specialty, :degree, :bio, :residency, :email, :image :appointments
-  
-    def appointments
-      @object.appointments
-    end
-  end
+class DoctorSerializer < ActiveModel::Serializer 
+    attributes :id, :first_name, :last_name, :specialty :degree, :bio, :residency, :email. :image
