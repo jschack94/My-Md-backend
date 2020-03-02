@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_200712) do
     t.integer "height"
     t.integer "weight"
     t.integer "age"
-    t.string "image"
+    t.string "image", default: "https://252radio.com/wp-content/uploads/2016/11/default-user-image.png"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
