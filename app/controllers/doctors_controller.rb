@@ -12,6 +12,11 @@ class DoctorsController < ApplicationController
 
   def create
     doctor = Doctor.find_or_create_by(email: params[:email])
+    render json: doctor
   end
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> d3ff470e6af004b04115c96fa835bb370729d93e
 end
