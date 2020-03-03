@@ -19,11 +19,20 @@
 Doctor.destroy_all
 Patient.destroy_all
 Appointment.destroy_all
-doctor = Doctor.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, specialty: "Cardiology", degree: "MD U Chicago", bio: Faker::Lorem.paragraph, residency: "Illinois Masonic", email: "doc@doc.com" )
-patient = Patient.create(health_conditions: "High Blood Pressure", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, height: 67, weight: 200, age: 34, email: "patient@me.org")
-appointment = Appointment.create(date: Faker::Date.forward(days: 23), time: Faker::Time.forward(days: 23, period: :morning), diagnosis: "Diabetes", directions: "Take Meds", doctor_id: doctor.id, patient_id: patient.id)
-patient_two = Patient.create(health_conditions: "Arthritis", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, height: 60, weight: 150, age: 82, email: "me@me.com")
+doctor = Doctor.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, specialty: "Internal Medicine", degree: "MD U Chicago", bio: Faker::Lorem.paragraph, residency: "Illinois Masonic", email: Faker::Internet.safe_email, image: "https://cdn11.bigcommerce.com/s-to15yve7gb/images/stencil/500x659/products/14206/14411/ur28794-99kb__63450.1528913403.jpg?c=2&imbypass=on" )
+patient = Patient.create(health_conditions: "High Blood Pressure", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, height: 67, weight: 200, age: 34, email: Faker::Internet.safe_email, image: "https://imgix.bustle.com/uploads/image/2018/3/26/b9a9d131-9c1b-4990-b3d2-0e0355989468-fotolia_188948342_subscription_monthly_m.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70&dpr=2")
+appointment = Appointment.create(date: Faker::Date.forward(days: 23), time: Faker::Time.forward(days: 23, period: :morning), diagnosis: "Diabetes", directions: "Take Meds", doctor: doctor, patient: patient)
+patient_two = Patient.create(health_conditions: "Arthritis", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, height: 60, weight: 150, age: 82, email: Faker::Internet.safe_email, image: "https://miro.medium.com/max/2144/0*T2ibWIG2fZ4up04E.jpg")
 appointment_two = Appointment.create(date: Faker::Date.forward(days: 23), time: Faker::Time.forward(days: 23, period: :morning), diagnosis: "Ankle Sprain", directions: "Ice and Ibuprofen", doctor: doctor, patient: patient_two)
+patient_three = Patient.create(health_conditions: "None", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, height: 63, weight: 120, age: 20, email: Faker::Internet.safe_email, image: "https://i.kinja-img.com/gawker-media/image/upload/c_scale,f_auto,fl_progressive,q_80,w_800/cplcc766u7disgdun8l1.jpg")
+appointment_three = Appointment.create(date: Faker::Date.forward(days: 23), time: Faker::Time.forward(days: 23, period: :morning), diagnosis: "Allergic Reaction", directions: "Visit allergist for allergy testing", doctor: doctor, patient: patient_three)
+patient_four = Patient.create(health_conditions: "Diabetes", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, height: 60, weight: 110, age: 70, email: Faker::Internet.safe_email)
+appointment_four = Appointment.create(date: Faker::Date.forward(days: 23), time: Faker::Time.forward(days: 23, period: :morning), diagnosis: "Sinusitis", directions: "Take antibiotics once a day with meal.", doctor: doctor, patient: patient_four)
+patient_five = Patient.create(health_conditions: "High Cholesterol", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, height: 70, weight: 180, age: 40, email: Faker::Internet.safe_email)
+appointment_five = Appointment.create(date: Faker::Date.forward(days: 23), time: Faker::Time.forward(days: 23, period: :morning), diagnosis: "Influenza", directions: "Bed rest, ibuprofen and fluids.", doctor: doctor, patient: patient_five)
+
+
+
 
 # create_table "doctors", force: :cascade do |t|
 #   t.string "first_name"
