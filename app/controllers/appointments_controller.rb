@@ -6,7 +6,9 @@ def index
 end
 
 def create
-  appointment = Appointment.create(id: params[:id])
+  date = params[:datetime]
+  p = DateTime.parse(date).to_date.to_s
+  appointment = Appointment.create(date: p, time: date, patient_id: params[:patient_id], doctor_id: params[:doctor_id])
   render json: appointment
 end
 
