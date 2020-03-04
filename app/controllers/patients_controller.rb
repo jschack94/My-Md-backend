@@ -10,6 +10,15 @@ class PatientsController < ApplicationController
     render json: patient
   end
 
+  def update
+    patient = Patient.find_by(id: params[:id])
+    patient.update(height: params[:height])
+    patient.update(weight: params[:weight])
+    patient.update(age: params[:age])
+    patient.update(email: params[:email])
+  
+    render json: patient
+  end
 
 
 end
