@@ -14,6 +14,13 @@ class DoctorsController < ApplicationController
     doctor = Doctor.find_or_create_by(email: params[:email])
     render json: doctor
   end
-  
 
+  def update
+    doctor = Doctor.find_by(id:params[:id])
+
+    doctor.update(bio: params[:bio])
+    doctor.update(image: params[:image])
+    doctor.update(email: params[:email])
+  
+  end
 end
