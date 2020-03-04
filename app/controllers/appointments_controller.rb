@@ -5,6 +5,11 @@ def index
   render json: appointments
 end
 
+def create
+  appointment = Appointment.create(id: params[:id])
+  render json: appointment
+end
+
 def show
   appointment = Appointment.find_by(id: params[:id])
   render json: appointment
