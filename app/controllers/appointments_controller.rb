@@ -25,6 +25,12 @@ def update
   render json: appointment
 end
 
+def destroy
+  appointment = Appointment.find_by(id: params[:id])
+  appointment.destroy
+  render json: appointment
+end
+
 # def edit
 #   appointment = Appointment.find(params[:id])
 # end
